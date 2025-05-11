@@ -9,10 +9,11 @@ require "rubocop/rake_task"
 
 RuboCop::RakeTask.new
 
-task default: %i[spec rubocop]
+task default: %i[spec rubocop compile]
 
 require "rake/extensiontask"
 
 Rake::ExtensionTask.new "crystals" do |ext|
   ext.lib_dir = "lib/crystals"
+  ext.ext_dir = "ext/crystals"
 end
