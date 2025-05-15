@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/crystals/crystals.rb"
+require_relative "lib/crystals/version.rb"
 
 Gem::Specification.new do |spec|
   spec.name = "crystals-ruby"
