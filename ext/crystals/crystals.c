@@ -1,4 +1,5 @@
 #include "ruby.h"
+#include "kyber.h"
 
 VALUE Crystals = Qnil;
 

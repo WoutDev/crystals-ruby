@@ -6,14 +6,14 @@ VALUE rb_cPrivateKey;
 VALUE rb_cCiphertext;
 
 // TODO: Have this depend on the security_level of the Kyber object
-#define PKBYTES pqcrystals_kyber512_PUBLICKEYBYTES
-#define SKBYTES pqcrystals_kyber512_SECRETKEYBYTES
+#define PKBYTES PQCLEAN_MLKEM512_CLEAN_CRYPTO_PUBLICKEYBYTES
+#define SKBYTES PQCLEAN_MLKEM512_CLEAN_CRYPTO_SECRETKEYBYTES
 
-VALUE generate_keypair() {
+VALUE generate_keypair(VALUE self) {
     uint8_t pk[PKBYTES];
     uint8_t sk[SKBYTES];
 
-    pqcrystals_kyber512_ref_keypair(pk, sk);
+    PQCLEAN_MLKEM512_CLEAN_crypto_kem_keypair(pk, sk);
 
     VALUE rb_pk = rb_str_new((const char*)pk, PKBYTES);
     VALUE rb_sk = rb_str_new((const char*)sk, SKBYTES);
