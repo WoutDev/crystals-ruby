@@ -6,6 +6,8 @@ VALUE rb_cPrivateKey;
 VALUE rb_cCiphertext;
 
 // TODO: Have this depend on the security_level of the Kyber object
+#define PKBYTES PQCLEAN_MLKEM512_CLEAN_CRYPTO_PUBLICKEYBYTES
+#define SKBYTES PQCLEAN_MLKEM512_CLEAN_CRYPTO_SECRETKEYBYTES
 
 VALUE generate_keypair(VALUE self) {
     uint8_t pk[PKBYTES];
